@@ -81,7 +81,7 @@ object Exporter {
         val transformer = Transformer.Builder(ctx)
             .addListener(object : Transformer.Listener {
                 override fun onCompleted(composition: Composition, exportResult: ExportResult) {
-                    val name = "LONE_${stamp()}${job.shape.suffix}${if (job.lut != null) "_" + job.lut.name.replace(' ', '') else ""}"
+                    val name = "LONE_${stamp()}${job.shape.suffix}${if (job.lut != null) "_" + job.lut.name.replace(" ", "") else ""}"
                     saveVideo(ctx, out, name)
                     out.delete()
                     next()
